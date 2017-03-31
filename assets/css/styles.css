@@ -1,0 +1,40 @@
+html{
+	box-sizing: border-box;
+	width: auto;
+	height: auto;
+}
+
+body{
+	font-family: 'Raleway', sans-serif;
+	margin: 0px;
+}
+
+#contenedor{
+
+	margin: 0px 380px 0px 380px;
+}
+
+/*
+
+#contenedor-title{
+	background: #3B5998;
+}
+
+*/
+
+#post-texto{
+	width: 600px;
+	max-width: 600px;
+}
+
+h1{
+	text-align: center;
+	font-size: 35px;
+}
+
+#postear{
+	margin-left: 455px;
+	margin-top: 20px;
+	width: 150px;
+	height: 23px;
+}
