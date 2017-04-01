@@ -10,16 +10,32 @@ window.onload = function(){
 		document.getElementById("post-texto").value = "";
 		localStorage.setItem("nuevoPost",JSON.stringify(new publicar(postTexto)));
 
-		console.log(new publicar(postTexto))
-		console.log("carajo")
+		console.log(new publicar(postTexto));
+	//	console.log("carajo");
 
 		var contenedorPrincipal = document.getElementById("div-posts");
 		var contenedorPost = document.createElement("div");
 		var parrafo = document.createElement("p");
-			parrafo.innerText = postTexto
 
-		contenedorPost.appendChild(parrafo);
-		contenedorPrincipal.appendChild(contenedorPost);
+		if(contenedorPrincipal.hasChildNodes() == false){
+
+			parrafo.innerText = postTexto
+			contenedorPost.appendChild(parrafo);
+			contenedorPrincipal.appendChild(contenedorPost);
+			console.log("false")
+
+		}else if(contenedorPrincipal.hasChildNodes() == true){
+
+			parrafo.innerText = postTexto
+			contenedorPost.appendChild(parrafo);
+		//	contenedorPost.insertBefore();
+			contenedorPrincipal.appendChild(contenedorPost)
+
+			console.log("true")
+
+			//contenedorPrincipal.appendChild(contenedorPost);
+			
+		}
 
 		/*
 
