@@ -28,8 +28,10 @@ window.onload = function(){
 
 			parrafo.innerText = postTexto
 			contenedorPost.appendChild(parrafo);
+			contenedorPrincipal.prepend(contenedorPost)
+		//	contenedorPost.appendChild(parrafo);
 		//	contenedorPost.insertBefore();
-			contenedorPrincipal.appendChild(contenedorPost)
+		//	contenedorPrincipal.appendChild(contenedorPost)
 
 			console.log("true")
 
