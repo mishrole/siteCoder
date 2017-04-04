@@ -1,32 +1,41 @@
 window.onload = function(){
 
-	function publicar(postTexto){
+	function publicar(autor, postTexto){
+		this.autor = autor;
 		this.postTexto = postTexto;
 	};
 
 	document.getElementById("postear").addEventListener("click", function(){
 
+		var autor = document.getElementById("post-autor").value
 		var postTexto = document.getElementById("post-texto").value
+		document.getElementById("post-autor").value = "";
 		document.getElementById("post-texto").value = "";
-		localStorage.setItem("nuevoPost",JSON.stringify(new publicar(postTexto)));
+		localStorage.setItem("nuevoPost",JSON.stringify(new publicar(autor, postTexto)));
 
-		console.log(new publicar(postTexto));
+		console.log(new publicar(autor, postTexto));
 	//	console.log("carajo");
 
 		var contenedorPrincipal = document.getElementById("div-posts");
 		var contenedorPost = document.createElement("div");
 		var parrafo = document.createElement("p");
+		var nombreAutor = document.createElement("p");
 
 		if(contenedorPrincipal.hasChildNodes() == false){
 
+			nombreAutor.innerText = autor
 			parrafo.innerText = postTexto
+			contenedorPost.appendChild(nombreAutor);
 			contenedorPost.appendChild(parrafo);
+
 			contenedorPrincipal.appendChild(contenedorPost);
 			console.log("false")
 
 		}else if(contenedorPrincipal.hasChildNodes() == true){
 
+			nombreAutor.innerText = autor
 			parrafo.innerText = postTexto
+			contenedorPost.appendChild(nombreAutor);
 			contenedorPost.appendChild(parrafo);
 			contenedorPrincipal.prepend(contenedorPost)
 		//	contenedorPost.appendChild(parrafo);
